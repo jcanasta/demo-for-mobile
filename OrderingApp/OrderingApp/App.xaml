@@ -2,9 +2,51 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OrderingApp.App">
-	<Application.Resources>
-
-		<!-- Application resource dictionary -->
-
-	</Application.Resources>
+    <Application.Resources>
+        <!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <Color x:Key="Header">#33444c</Color>
+            <Color x:Key="SideBar">#29363d</Color>
+            <Color x:Key="Secondary">#20a8d8</Color>
+            <Color x:Key="HeadingTextColor">#ffffff</Color>
+            <Color x:Key="EntryBackground">#ffffff</Color>
+            <Color x:Key="PrimaryBackground">#e4e5e6</Color>
+            <Color x:Key="FooterBackground">#f5302e</Color>
+            <Style x:Key="LabelPageHeadingStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="TextColor" Value="{StaticResource HeadingTextColor}" />
+            </Style>
+            <Style x:Key="LabelCustomStyle" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource Secondary}"/>
+                <Setter Property="TextColor" Value="{StaticResource HeadingTextColor}" />
+            </Style>
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="BackgroundColor" Value="{StaticResource Secondary}"/>
+                <Setter Property="BorderColor" Value="{StaticResource Secondary}" />
+                <Setter Property="BorderRadius" Value="1" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="TextColor" Value="{StaticResource HeadingTextColor}" />
+            </Style>
+            <Style x:Key="buttonFooterStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="BackgroundColor" Value="{StaticResource FooterBackground}"/>
+                <Setter Property="BorderColor" Value="{StaticResource FooterBackground}" />
+                <Setter Property="BorderRadius" Value="1" />
+                <Setter Property="BorderWidth" Value="1" />
+                <Setter Property="TextColor" Value="{StaticResource HeadingTextColor}" />
+            </Style>
+            <Style x:Key="gridStyle" TargetType="Button">
+                <Setter Property="Margin" Value="10,10,10,10"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

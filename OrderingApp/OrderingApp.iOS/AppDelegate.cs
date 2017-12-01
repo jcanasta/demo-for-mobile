@@ -4,6 +4,8 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Syncfusion.ListView.XForms.iOS;
+using Syncfusion.SfNumericTextBox.XForms.iOS;
 
 namespace OrderingApp.iOS
 {
@@ -23,6 +25,8 @@ namespace OrderingApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            SfListViewRenderer.Init();
+            new SfNumericTextBoxRenderer();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

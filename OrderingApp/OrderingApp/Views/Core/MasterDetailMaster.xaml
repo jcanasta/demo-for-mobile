@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             x:Class="OrderingApp.Views.Core.MasterDetailMaster"
+             Title="Master">
+    <StackLayout BackgroundColor="{StaticResource SideBar}">
+        <syncfusion:SfListView x:Name="MenuItemsListView" SelectionBackgroundColor="{StaticResource Header}" ItemsSource="{Binding MenuItems}" HeaderSize="200">
+            <syncfusion:SfListView.HeaderTemplate>
+                <DataTemplate>
+                    <Grid BackgroundColor="{StaticResource Header}" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" >
+                        <Grid HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.8*"/>
+                                <RowDefinition Height="0.2*"/>
+                            </Grid.RowDefinitions>
+                            <StackLayout Grid.Row="0" HorizontalOptions="Center"  VerticalOptions="Center">
+                                <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                    <Image Source="https://www.shareicon.net/download/2016/09/01/822711_user_512x512.png" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" />
+                                </Grid>
+                            </StackLayout>
+                            <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" 
+                                >
+                                <Label
+                                    Text="{Binding CurrentCustomer.FirstName}" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                                    TextColor="{StaticResource HeadingTextColor}"
+                                />
+                            </StackLayout>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </syncfusion:SfListView.HeaderTemplate>
+
+            <syncfusion:SfListView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Margin="10, 10, 10, 10" HorizontalOptions="FillAndExpand">
+                        <Label VerticalOptions="FillAndExpand" 
+                                VerticalTextAlignment="Center" 
+                                Text="{Binding Title}" TextColor="{StaticResource HeadingTextColor}"/>
+                    </StackLayout>
+                </DataTemplate>
+            </syncfusion:SfListView.ItemTemplate>
+        </syncfusion:SfListView>
+        <!--<ListView x:Name="MenuItemsListView"
+              SeparatorVisibility="None"
+              HasUnevenRows="true"
+              ItemsSource="{Binding MenuItems}">
+            <ListView.Header>
+                <Grid BackgroundColor="{StaticResource Header}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                    </Grid.RowDefinitions>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="2"
+                        Text="Test Cart"
+                        TextColor="{StaticResource HeadingTextColor}"
+                        />
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
+                            <Label VerticalOptions="FillAndExpand" 
+                    VerticalTextAlignment="Center" 
+                    Text="{Binding Title}" TextColor="{StaticResource HeadingTextColor}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+    </StackLayout>
+</ContentPage>

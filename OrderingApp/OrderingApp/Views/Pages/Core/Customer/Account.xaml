@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OrderingApp.Views.Pages.Core.Customer.Account">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.4*"/>
+                    <RowDefinition Height="0.3*"/>
+                    <RowDefinition Height="0.3*"/>
+                </Grid.RowDefinitions>
+                <Frame Grid.Row="0" CornerRadius="5"  
+                            OutlineColor="{StaticResource SideBar}" 
+                            Padding="0" Margin="5, 5, 5, 5">
+                    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.2*"/>
+                            <RowDefinition Height="0.8*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="Account Information" 
+                           BackgroundColor="{StaticResource SideBar}" VerticalTextAlignment="Center" 
+                           TextColor="{StaticResource HeadingTextColor}" HorizontalTextAlignment="Center"
+                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                        <Grid Grid.Row="1" Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.2*"/>
+                                <RowDefinition Height="0.2*"/>
+                                <RowDefinition Height="0.2*"/>
+                                <RowDefinition Height="0.2*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Text="First Name:" FontAttributes="Bold" TextColor="{StaticResource Header}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Last Name:" FontAttributes="Bold" TextColor="{StaticResource Header}"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding CurrentCustomer.FirstName}" TextColor="{StaticResource Header}" />
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding CurrentCustomer.LastName}"  TextColor="{StaticResource Header}" />
+                            <Label Grid.Row="2" Grid.Column="0" Text="Middle Name:" FontAttributes="Bold" TextColor="{StaticResource Header}"/>
+                            <Label Grid.Row="2" Grid.Column="1" Text="Birth Date:" FontAttributes="Bold" TextColor="{StaticResource Header}"/>
+                            <Label Grid.Row="3" Grid.Column="0" Text="{Binding CurrentCustomer.MiddleName}" TextColor="{StaticResource Header}"/>
+                            <Label Grid.Row="3" Grid.Column="1" Text="{Binding CurrentCustomer.BirthDate}" TextColor="{StaticResource Header}"/>
+                        </Grid>
+                    </Grid>
+                </Frame>
+                <Frame Grid.Row="1" CornerRadius="5"  
+                            OutlineColor="{StaticResource SideBar}" 
+                            Padding="0" Margin="5, 5, 5, 5">
+                    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.2*"/>
+                            <RowDefinition Height="0.8*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="Billing Information" 
+                           BackgroundColor="{StaticResource SideBar}" VerticalTextAlignment="Center" 
+                           TextColor="{StaticResource HeadingTextColor}" HorizontalTextAlignment="Center"
+                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                        <Grid Grid.Row="1" Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.2*"/>
+                                <RowDefinition Height="0.2*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.ColumnSpan="2" Text="Billing Address" FontAttributes="Bold" TextColor="{StaticResource Header}"/>
+                            <Label Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding CurrentCustomer.BillingAddress}" TextColor="{StaticResource Header}"/>
+                        </Grid>
+                    </Grid>
+                </Frame>
+                <Frame Grid.Row="2" CornerRadius="5"  
+                            OutlineColor="{StaticResource SideBar}" 
+                            Padding="0" Margin="5, 5, 5, 5">
+                    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.2*"/>
+                            <RowDefinition Height="0.8*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="Shipping Information" 
+                           BackgroundColor="{StaticResource SideBar}" VerticalTextAlignment="Center" 
+                           TextColor="{StaticResource HeadingTextColor}" HorizontalTextAlignment="Center"
+                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                        <Grid Grid.Row="1" Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.2*"/>
+                                <RowDefinition Height="0.2*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.ColumnSpan="2" Text="Shipping Address" FontAttributes="Bold" TextColor="{StaticResource Header}"/>
+                            <Label Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding CurrentCustomer.BillingAddress}" TextColor="{StaticResource Header}"/>
+                        </Grid>
+                    </Grid>
+                </Frame>
+            </Grid>
+           
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OrderingApp.Views.Pages.Sales.Ordering.ProductDetail"
+             Title="{Binding Title}"
+             >
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="{StaticResource PrimaryBackground}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.4*"/>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="0.1*"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0"  BackgroundColor="{StaticResource Secondary}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Image Source="{Binding Product.Image}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Grid.Row="1" Padding="5, 5, 5, 5" BackgroundColor="{StaticResource PrimaryBackground}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid  Padding="5, 5, 5, 5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.1*"/>
+                            <RowDefinition Height="0.1*"/>
+                            <RowDefinition Height="0.8*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="{Binding Product.ProductName, StringFormat='Name : {0}'}" FontAttributes="Bold" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  TextColor="{StaticResource Header}" FontSize="18" />
+                        <Label Grid.Row="1" Text="{Binding Product.ProductPrice, StringFormat='Price : {0:C}'}}" FontAttributes="Bold" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  TextColor="{StaticResource Header}" FontSize="16" />
+                        <Frame Grid.Row="2" CornerRadius="5"  
+                            OutlineColor="{StaticResource SideBar}" 
+                            Padding="0"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <Grid Margin="5, 5, 5, 5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="0.2*"/>
+                                        <RowDefinition Height="0.8*"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Text="Description" Grid.Row="0" FontAttributes="Bold" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  TextColor="{StaticResource Header}" FontSize="18"/>
+                                    <Label Text="{Binding Product.Description}" Grid.Row="1"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  TextColor="{StaticResource Header}" FontSize="18"/>
+                                </Grid>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </StackLayout>
+                <StackLayout Grid.Row="2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Button Style="{StaticResource buttonFooterStyle}" Command="{Binding AddToCart}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Text="Add to Cart"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

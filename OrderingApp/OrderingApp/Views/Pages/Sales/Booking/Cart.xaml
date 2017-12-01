@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms" 
+             x:Class="OrderingApp.Views.Pages.Sales.Booking.Cart">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.4*"/>
+                    <RowDefinition Height="0.6*"/>
+                </Grid.RowDefinitions>
+                <Frame Grid.Row="0" CornerRadius="5"  
+                            OutlineColor="{StaticResource SideBar}" 
+                            Padding="0" Margin="5, 5, 5, 5">
+                    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.2*"/>
+                            <RowDefinition Height="0.8*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="Orders" 
+                           BackgroundColor="{StaticResource SideBar}" VerticalTextAlignment="Center" 
+                           TextColor="{StaticResource HeadingTextColor}" HorizontalTextAlignment="Center"
+                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                        <Grid Grid.Row="1" Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.2*"/>
+                                <RowDefinition Height="0.2*"/>
+                                <RowDefinition Height="0.2*"/>
+                                <RowDefinition Height="0.2*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Text="Order Number:" FontAttributes="Bold" TextColor="{StaticResource Header}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Date:" FontAttributes="Bold" TextColor="{StaticResource Header}"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding Orders.OrderID}" TextColor="{StaticResource Header}" />
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding Orders.DateCreated}"  TextColor="{StaticResource Header}" />
+                            <Label Grid.Row="2" Grid.Column="0" Text="Customer:" FontAttributes="Bold" TextColor="{StaticResource Header}"/>
+                            <Label Grid.Row="2" Grid.Column="1" Text="Total:" FontAttributes="Bold" TextColor="{StaticResource Header}"/>
+                            <Label Grid.Row="3" Grid.Column="0" Text="{Binding Orders.CustomerName}" TextColor="{StaticResource Header}"/>
+                            <Label Grid.Row="3" Grid.Column="1" Text="{Binding Orders.Total}" TextColor="{StaticResource Header}"/>
+                        </Grid>
+                    </Grid>
+                </Frame>
+                <Frame Grid.Row="1" CornerRadius="5"  
+                            OutlineColor="{StaticResource SideBar}" 
+                            Padding="0" Margin="5, 5, 5, 5">
+                    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.2*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="Order Details" 
+                           BackgroundColor="{StaticResource SideBar}" VerticalTextAlignment="Center" 
+                           TextColor="{StaticResource HeadingTextColor}" HorizontalTextAlignment="Center"
+                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                        <syncfusion:SfDataGrid Grid.Row="1" x:Name="dataGrid" Padding="0" Margin="0" ColumnSizer="Star" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                   AutoGenerateColumns="False"
+                   ItemsSource="{Binding OrderDetails}">
+                            <syncfusion:SfDataGrid.Columns>
+                                <syncfusion:GridTextColumn HeaderText="Order ID" MappingName="OrderID" />
+                                <syncfusion:GridTextColumn HeaderText="Name" MappingName="ProductName" />
+                                <syncfusion:GridTextColumn HeaderText="QTY" MappingName="Quantity" />
+                                <syncfusion:GridTextColumn HeaderText="Price" MappingName="ProductPrice" />
+                                <syncfusion:GridTextColumn HeaderText="Total" MappingName="Total" />
+                            </syncfusion:SfDataGrid.Columns>
+                        </syncfusion:SfDataGrid>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
